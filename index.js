@@ -2,7 +2,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const { Pool } = require('pg');
-const connectionString  = 'postgresql://postgres:iconnect25@201.22.57.246:5432/pneumax';   //username:password@location:port/dbname
+const connectionString  = process.env.CONNECTION_STRING;   //username:password@location:port/dbname
 const PORT = 3001;
 
 
