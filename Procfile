@@ -1,1 +1,1 @@
-web: ENV_SILENT=true node .\index.js
+web: ENV_SILENT=true npm start
