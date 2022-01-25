@@ -3,7 +3,8 @@ const socketio = require('socket.io');
 const http = require('http');
 const { Pool } = require('pg');
 // const connectionString  = 'postgres://ndcfznknhgtflt:fa9b3c262cb55a6ddee8461a42faeffcb8ca232a2cc8fce0886b60aa2b91ac3f@ec2-34-239-196-254.compute-1.amazonaws.com:5432/d9si4nnq50sv87';   //username:password@location:port/dbname
-const PORT = 3001;
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 
 const router = require('./router');
@@ -145,4 +146,4 @@ app.use(router);
 
 
 
-server.listen(PORT || 5000, () => console.log('server is running'))
+server.listen(port, host, () => console.log('server is running'))
