@@ -145,4 +145,4 @@ app.use(router);
 
 
 
-server.listen(PORT, () => console.log('server is running'))
+server.listen(PORT || 5000, () => console.log('server is running'))
