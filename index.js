@@ -2,7 +2,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const { Pool } = require('pg');
-const connectionString  = process.env.CONNECTION_STRING;   //username:password@location:port/dbname
+// const connectionString  = 'postgres://ndcfznknhgtflt:fa9b3c262cb55a6ddee8461a42faeffcb8ca232a2cc8fce0886b60aa2b91ac3f@ec2-34-239-196-254.compute-1.amazonaws.com:5432/d9si4nnq50sv87';   //username:password@location:port/dbname
 const PORT = 3001;
 
 
@@ -11,10 +11,15 @@ const { query } = require('express');
 const app = express();
 const server = http.createServer(app);
 
-
 const pool = new Pool({
-    connectionString
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
+    port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
+    ssl: { rejectUnauthorized: false }
 });
+
 //Check if connection is good or bad
 pool.connect(err => {
     if(err) {
