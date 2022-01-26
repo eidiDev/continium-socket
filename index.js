@@ -86,7 +86,6 @@ io.on('connection', (socket) => {
          nt."orderProd",
          nt.colaborador,
          nt.etapa,
-         nt.maquina as maquinaNoteprod,
          nt.id as noteprodid,
          p.cod as produtocod,
          p.id as productid,
