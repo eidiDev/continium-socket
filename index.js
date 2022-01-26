@@ -113,6 +113,8 @@ io.on('connection', (socket) => {
 
 
         try {
+            console.log("maquinas: " + maqs);
+            console.log("mtgs: " + mtgs);
             const res1 = await pool.query(queryText);
             const res2 = await pool.query(queryExec);
 
