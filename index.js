@@ -108,7 +108,7 @@ io.on('connection', (socket) => {
 
         queryText += ` and ("statusEtapa" = 'liberada');` 
         //queryExec += ` and (regexp_replace(opm."statusEtapa", '[^a-zA-Z0-9]', '', 'g') = 'execucao') and (nt."dataFim" = '');`
-        queryExec += ` and (opm."statusEtapa" = 'execução' or opm."statusEtapa" = 'execucao') and (nt."dataFim" = '');`
+        queryExec += ` and (opm."statusEtapa" = 'execução' or opm."statusEtapa" = 'execucao') and (nt."dataFim" = '' or  nt."dataFim" is null);`
         
 
 
