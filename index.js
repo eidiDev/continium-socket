@@ -115,7 +115,6 @@ io.on('connection', (socket) => {
         try {
             const res1 = await pool.query(queryText);
             const res2 = await pool.query(queryExec);
-            console.log(res2.rows);
 
             if(res1 && res2){
                 io.to(socket.id).emit("getMachinesFreedom", { lista: res1.rows, listaexec : res2.rows }); 
